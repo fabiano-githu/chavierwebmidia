@@ -1,0 +1,148 @@
+/* ===== PÁGINA SOBRE ===== */
+.pagina-sobre {
+    background-color: #f9f9f9; /* fundo leve */
+    color: #0d47a1;            /* texto azul escuro */
+    font-family: 'Segoe UI', sans-serif;
+    padding: 60px 20px;
+    line-height: 1.7;
+    min-height: 100vh; /* altura mínima igual à altura da tela */
+}
+
+.sobre-intro,
+.sobre-missao,
+.servicos-cards,
+.sobre-contato {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+
+/* ===== Seção de introdução ===== */
+.sobre-intro {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* fundo leve */
+    border-bottom: 1px solid #0d47a1; /* borda inferior para destaque */
+}
+
+.sobre-intro h1 {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sobre-intro p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+/* ===== Seção de serviços (cards) ===== */
+.servicos-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* distribui os cards igualmente */
+    width: 100%; /* ocupa toda a largura da tela */
+    padding: 20px;
+    background-color: #f9f9f9; /* fundo leve */
+}
+
+.card-servico {
+    text-decoration: none; /* remove o sublinhado */
+    color: inherit; /* mantém a cor do texto do card */
+    background: #ffffff;
+    padding: 100px 30px; /* aumenta o espaçamento interno para aumentar a altura */
+    border-radius: 15px;
+    flex: 1 1 calc(25% - 20px); /* ajusta a largura para quatro cards por linha, por exemplo */
+    min-width: 500px; /* largura mínima */
+    max-width: 350px; /* largura máxima */
+    height: auto; /* altura automática com base no conteúdo */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .card-servico {
+        flex: 1 1 100%; /* empilha os cards em telas pequenas */
+    }
+}
+
+
+/* ===== Seção de missão ===== */
+.sobre-missao {
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* fundo leve */
+    border-top: 1px solid #0d47a1; /* borda superior para destaque */
+}
+
+.sobre-missao h2 {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.sobre-missao p {
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: 5px; /* Espaçamento entre o parágrafo e o próximo elemento */
+}
+/* ===== Chamada para contato ===== */
+.sobre-contato {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 40px;
+    padding: 20px 10px;
+    background-color: #ffffff; /* cor de fundo leve */
+    border-top: 1px solid #0d47a1; /* borda superior para destaque */
+}
+
+.sobre-contato a {
+    color: #1e81ce;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sobre-contato a:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}
+
+/* ===== Separador de seções ===== */
+.section-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #0d47a1;
+    margin: 100px 0; /* espaçamento acima e abaixo da linha */
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+    .servicos-cards {
+        gap: 20px; /* reduz espaçamento em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .servicos-cards {
+        flex-direction: column; /* empilha os cards em telas pequenas */
+        align-items: center;
+    }
+
+    .card-servico {
+        flex: 0 1 80%; /* aumenta o tamanho do card empilhado */
+        max-width: 350px;
+    }
+}

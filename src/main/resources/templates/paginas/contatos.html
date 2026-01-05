@@ -1,0 +1,64 @@
+<#include "/layouts/header.html">
+
+
+<section class="contato-section">
+    <div class="contato-container">
+
+        <!-- INFORMAÇÕES -->
+        <div class="contato-info">
+            <h2>Entre em Contato</h2>
+            <p>
+                Solicite um orçamento ou tire suas dúvidas.
+                Atendimento rápido e profissional.
+            </p>
+
+            <ul class="contato-detalhes">
+                <li>
+                    <i class="bi bi-envelope"></i>
+                    contato@webmidia.com
+                </li>
+                <li>
+                    <i class="bi bi-whatsapp"></i>
+                    (11) 99999-9999
+                </li>
+                <li>
+                    <i class="bi bi-geo-alt"></i>
+                    Atendimento online – Brasil
+                </li>
+            </ul>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <div class="contato-form">
+            <form action="/contato/enviar" method="post">
+
+                <input type="text"
+                       name="nome"
+                       placeholder="Seu nome"
+                       required>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Seu e-mail"
+                       required>
+
+                <input type="text"
+                       name="assunto"
+                       placeholder="Assunto">
+
+                <textarea name="mensagem"
+                          placeholder="Digite sua mensagem"
+                          required></textarea>
+
+                <button type="submit">
+                    <i class="bi bi-send"></i> Enviar Mensagem
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+<#include "/layouts/footer.html">

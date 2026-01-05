@@ -1,0 +1,637 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merienda', cursive;
+    background-color: #f8f9fa;
+}
+
+/* =========================
+   HEADER MAIS COMPACTO
+========================= */
+.site-header {
+    padding: 5px 0;
+    background-color: #111;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Logo do site */
+.logo-img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MENU
+========================= */
+.navbar-nav .nav-link {
+    padding: 5px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-right: 15px;
+    background-color:  #0d6efd;
+    transition: color 0.3s, transform 0.3s;
+    border: 2px solid #fff;
+    border-radius:20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0000CD;
+    transform: scale(1.05);
+}
+
+/* Dropdown do menu */
+.navbar-nav .dropdown-menu {
+    background-color: #0e83e3;
+    border-radius: 6px;
+    padding: 5px 0;
+    border: 2px solid #fff;5}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #0000CD;
+    color: #fff;
+}
+
+/* =========================
+   AVATAR / LOGIN
+========================= */
+
+/* Avatar do usuário */
+.navbar .nav-item.dropdown img.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-left: 200px; /* Ajusta afastamento do menu */
+}
+
+/* Hover no avatar */
+.navbar .nav-item.dropdown img.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Dropdown do avatar centralizado abaixo do avatar */
+.navbar .dropdown-menu-end {
+    position: absolute;
+    top: calc(100% + 10px); /* 10px abaixo do avatar */
+    left: 50%;               /* centraliza horizontal em relação ao avatar */
+    transform: translateX(-50%);
+    min-width: 130px;
+    padding: 10px 0;
+    text-align: center;      /* centraliza os botões */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Botões do dropdown (Login e Logout) */
+.navbar .dropdown-menu .dropdown-item {
+    display: block;
+    width: 70%;              /* largura do botão */
+    margin: 5px auto;        /* centraliza horizontalmente */
+    border-radius: 6px;
+    padding: 6px 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Botão Google */
+#loginGoogle {
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+}
+
+#loginGoogle:hover {
+    background-color: #357ae8;
+}
+
+/* Botão Logout */
+#logout {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+#logout:hover {
+    background-color: #c82333;
+}
+
+/* =========================
+   RESPONSIVIDADE AVATAR / DROPDOWN
+========================= */
+@media (max-width: 992px) {
+    .logo-img {
+        width: 120px;
+    }
+
+    .navbar .nav-item.dropdown img.avatar {
+        width: 60px;
+        height: 60px;
+        margin-left: 150px; /* ajusta afastamento do menu */
+    }
+
+    .navbar .dropdown-menu-end {
+        min-width: 120px;
+    }
+
+    .navbar .dropdown-menu .dropdown-item {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        width: 90px;
+    }
+
+    .navbar .nav-item.dropdown img.avatar {
+        width: 50px;
+        height: 50px;
+        margin-left: 100px; /* ajusta afastamento do menu em celular */
+    }
+
+    .navbar .dropdown-menu-end {
+        min-width: 110px;
+    }
+
+    .navbar .dropdown-menu .dropdown-item {
+        width: 90%;
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================
+   FOOTER PROFISSIONAL
+========================= */
+.site-footer {
+    background: linear-gradient(135deg, #111, #222);
+    color: #fff;
+    padding: 50px 20px 30px 20px;
+    font-family: 'Merienda', cursive;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1 1 220px;
+    margin: 10px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f0c040;
+    letter-spacing: 0.5px;
+}
+
+.footer-col a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #f0c040;
+    transform: translateX(5px);
+}
+
+.footer-col .social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-col .social-icons a {
+    font-size: 20px;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #222;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-icons a:hover {
+    background-color: #f0c040;
+    color: #111;
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 14px;
+    color: #ccc;
+    letter-spacing: 0.5px;
+}
+
+/* Botão voltar ao topo */
+#btn-topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #f0c040;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#btn-topo:hover {
+    background-color: #d4a80d;
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* Responsividade footer */
+@media (max-width: 992px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .footer-col .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merienda', cursive;
+    background-color: #f8f9fa;
+}
+
+/* =========================
+   HEADER MAIS COMPACTO
+========================= */
+.site-header {
+    padding: 5px 0;
+    background-color: #111;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Logo do site */
+.logo-img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MENU
+========================= */
+.navbar-nav .nav-link {
+    padding: 5px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-right: 15px;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0000CD;
+    transform: scale(1.05);
+}
+
+/* Dropdown do menu */
+.navbar-nav .dropdown-menu {
+    background-color: #0e83e3;
+    border-radius: 6px;
+    padding: 5px 0;
+    border: 2px solid #fff;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #0000CD;
+    color: #fff;
+}
+
+/* =========================
+   AVATAR / LOGIN
+========================= */
+
+/* Avatar do usuário */
+.navbar .nav-item.dropdown img.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-left: 200px; /* Ajusta afastamento do menu */
+}
+
+/* Hover no avatar */
+.navbar .nav-item.dropdown img.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Dropdown do avatar centralizado abaixo do avatar */
+.navbar .dropdown-menu-end {
+    position: absolute;
+    top: calc(100% + 10px); /* 10px abaixo do avatar */
+    left:50%;               /* centraliza horizontal em relação ao avatar */
+    transform: translateX(-50%);
+    min-width: 130px;
+    text-align: center;      /* centraliza os botões */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    margin-left:100px;
+}
+
+/* Botões do dropdown (Login e Logout) */
+.navbar .dropdown-menu .dropdown-item {
+    display: block;
+    width: 70%;              /* largura do botão */
+    margin: 5px auto;        /* centraliza horizontalmente */
+    border-radius: 6px;
+    padding: 6px 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-left:20px;
+}
+
+/* Botão Google */
+#loginGoogle {
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+}
+
+#loginGoogle:hover {
+    background-color: #357ae8;
+}
+
+/* Botão Logout */
+#logout {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+#logout:hover {
+    background-color: #c82333;
+}
+
+/* =========================
+   RESPONSIVIDADE AVATAR / DROPDOWN
+========================= */
+@media (max-width: 992px) {
+    .logo-img {
+        width: 120px;
+    }
+
+    .navbar .nav-item.dropdown img.avatar {
+        width: 60px;
+        height: 60px;
+        margin-left: 150px; /* ajusta afastamento do menu */
+    }
+
+    .navbar .dropdown-menu-end {
+        min-width: 120px;
+    }
+
+    .navbar .dropdown-menu .dropdown-item {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        width: 90px;
+    }
+
+    .navbar .nav-item.dropdown img.avatar {
+        width: 50px;
+        height: 50px;
+        margin-left: 100px; /* ajusta afastamento do menu em celular */
+    }
+
+    .navbar .dropdown-menu-end {
+        min-width: 110px;
+    }
+
+    .navbar .dropdown-menu .dropdown-item {
+        width: 90%;
+        font-size: 0.85rem;
+    }
+}
+/* ==========================
+   FOOTER
+========================== */
+.site-footer {
+    background-color: #111; /* fundo escuro */
+    color: #eee; /* texto padrão */
+    padding: 50px 20px;
+    font-family: 'Merienda', cursive;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* espaço entre colunas */
+}
+
+/* ==========================
+   COLUNAS
+========================== */
+.footer-col {
+    flex: 1 1 200px;
+    min-width: 180px;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Cores específicas para cada título */
+.footer-col:nth-child(1) h4 { color: #0d6efd; }   /* Links */
+.footer-col:nth-child(2) h4 { color: #0d6efd; }   /* Redes Sociais */
+.footer-col:nth-child(3) h4 { color: #0d6efd; }   /* Parceiros */
+
+/* Links do footer */
+.footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #0d6efd;
+}
+
+/* ==========================
+   REDES SOCIAIS
+========================== */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Define a cor padrão dos ícones sociais */
+.footer-col .social-icons a {
+    color: #fff; /* cor padrão (branca, por exemplo) */
+    font-size: 1.5rem; /* tamanho dos ícones */
+    margin-right: 10px; /* espaçamento entre ícones */
+    transition: color 0.3s ease; /* transição suave */
+}
+
+/* Hover: muda a cor dos ícones */
+.footer-col .social-icons a:hover {
+    color: #0d6efd !important; /* cor azul do hover, sobrescreve Bootstrap */
+}
+
+
+
+/* ==========================
+   RODAPÉ INFERIOR
+========================== */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #0d6efd;
+}
+
+/* ==========================
+   BOTÃO VOLTAR AO TOPO
+========================== */
+#btn-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color:#0d6efd;
+    color: #111;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#btn-topo:hover {
+    transform: scale(1.1);
+    background-color:#0d6efd;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .footer-col {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
