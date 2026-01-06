@@ -1,0 +1,31 @@
+<#-- INCLUDE DO HEADER -->
+<#include "/layouts/header.html">
+
+<h2>Meus Pads</h2>
+
+<form action="/pads/salvar" method="post">
+    <input type="hidden" name="id" value="${pad.id!}">
+
+    <label>Título</label>
+    <input type="text" name="titulo" value="${pad.titulo!}" required>
+
+    <label>Conteúdo</label>
+    <textarea name="conteudo" required>${pad.conteudo!}</textarea>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<hr>
+
+<#list pads as p>
+<div class="pad-card">
+    <h3>${p.titulo}</h3>
+    <p>${p.conteudo}</p>
+
+    <a href="/pads/editar/${p.id}">Editar</a> |
+    <a href="/pads/excluir/${p.id}">Excluir</a>
+</div>
+</#list>
+
+<#-- INCLUDE DO FOOTER -->
+<#include "/layouts/footer.html">

@@ -1,0 +1,82 @@
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px;
+    width: 450px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Fechar modal */
+.modal .close {
+    position: absolute;
+    top: 12px; right: 16px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+form input[type="text"],
+form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: vertical; /* só permite aumentar verticalmente */
+}
+
+form textarea {
+    min-height: 100px; /* aumenta área da descrição */
+}
+
+/* Placeholder estilizado */
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Botão */
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Animação modal */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
